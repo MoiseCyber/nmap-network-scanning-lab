@@ -1,0 +1,16 @@
+# Nmap 7.99 scan initiated Sat Apr 25 05:14:00 2026 as: nmap -sU -oN task3_udp_scan.txt [target-ip]
+Nmap scan report for [target-ip]
+Host is up (0.00040s latency).
+Not shown: 991 closed udp ports (port-unreach)
+PORT     STATE         SERVICE
+123/udp  open|filtered ntp
+137/udp  open|filtered netbios-ns
+138/udp  open|filtered netbios-dgm
+1900/udp open|filtered upnp
+3702/udp open|filtered ws-discovery
+4500/udp open|filtered nat-t-ike
+5050/udp open|filtered mmcc
+5353/udp open|filtered zeroconf
+5355/udp open|filtered llmnr
+
+# Nmap done at Sat Apr 25 05:17:03 2026 -- 1 IP address (1 host up) scanned in 182.44 seconds
