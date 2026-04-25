@@ -199,3 +199,21 @@ nmap -sS [target-ip] -oN task2_syn_scan.txt
 ![TCP SYN Scan Output File](08b-task2-syn-scan-output-file.png)
 
 📄 [View Raw Scan Output](task2_syn_scan.txt)
+
+#### Task 3 — UDP Scan
+
+Performed a UDP scan to identify open UDP ports and services.
+
+**Command used:**
+
+nmap -sU [target-ip] -oN task3_udp_scan.txt
+
+**Key observations:**
+- 9 open|filtered UDP ports detected
+- 991 closed UDP ports
+- Scan completed in 182 seconds — slower than TCP due to UDP being connectionless
+- UPnP and LLMNR detected — worth monitoring
+
+![UDP Scan](09-udp-scan.png)
+
+📄 [View Raw Scan Output](task3_udp_scan.txt)
