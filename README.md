@@ -222,3 +222,23 @@ nmap --reason -p- [target-ip] -oN task4_reasons.txt
 ![Port State Reasons](10-port-state-reasons-scan.png)
 
 📄 [View Raw Scan Output](task4_reasons.txt)
+
+#### Task 5 — Lightweight Vulnerability Scan
+
+Used `--script vuln` to run Nmap's built-in vulnerability
+scripts against all open ports.
+
+**Command used:**
+
+nmap --script vuln [target-ip] -oN task5_vuln_scan.txt
+
+**Key observations:**
+- Slowloris DoS vulnerability detected on port 8000
+- CVE-2007-6750 — State: LIKELY VULNERABLE
+- robots.txt file found on port 8000
+- SMB vulnerabilities checked — none found
+- Scan completed in 322 seconds
+
+![Vulnerability Scan](11-vulnerability-scan.png)
+
+📄 [View Raw Scan Output](task5_vuln_scan.txt)
