@@ -111,3 +111,17 @@ nmap -sV [target-ip]
 - UPnP enabled on port 5357
 
 ![Service Version Detection](05-service-version-detection.png)
+
+### Step 4b — Saving Scan Results to File
+Used the `-oN` flag to export scan results to a text file
+for documentation and reporting purposes.
+
+**Command used:**
+
+nmap -sV -oN scan_results.txt [target-ip]
+
+**Why this matters:**
+In real security assessments, saving scan output is essential
+for documentation, audit trails, and reporting to stakeholders.
+
+📄 [View Full Scan Results](scan_results.txt)
