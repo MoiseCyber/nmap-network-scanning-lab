@@ -28,3 +28,20 @@ Splunk SIEM and Intel AMT remote management technology.
 - **Intel AMT (16992)** — Remote management port exposed, ensure access is restricted
 - **UPnP (5357)** — Can expose network to unauthorized device discovery
 - **Splunk (8000/8089)** — Ensure access is restricted to authorized users only
+
+- ## Task 4 — Port State Reasons
+
+| Port | State | Service | Reason | Comment |
+|------|-------|---------|--------|---------|
+| 135/tcp | open | msrpc | syn-ack ttl 128 | Windows RPC |
+| 137/tcp | filtered | netbios-ns | no-response | Firewall blocking |
+| 139/tcp | open | netbios-ssn | syn-ack ttl 128 | NetBIOS file sharing |
+| 445/tcp | open | microsoft-ds | syn-ack ttl 128 | SMB |
+| 8000/tcp | open | http-alt | syn-ack ttl 128 | Splunk web interface |
+| 8089/tcp | open | unknown | syn-ack ttl 128 | Splunk HTTPS |
+| 16992/tcp | open | amt-soap-http | syn-ack ttl 128 | Intel AMT |
+| 49664-50131/tcp | open | unknown | syn-ack ttl 128 | Windows dynamic ports |
+
+**Findings:** TTL 128 confirms Windows OS on target host. All open ports
+responded with syn-ack, meaning no firewall interference on LAN.
+Port 137 is the only filtered port, blocked by the host firewall.
