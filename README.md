@@ -126,8 +126,43 @@ for documentation, audit trails, and reporting to stakeholders.
 
 📄 [View Full Scan Results](scan_results.txt)
 
-## 📊 Findings Report
+## 📊 Findings Report step 5
 A detailed findings report documenting all discovered hosts,
 open ports, services, and risk observations from the scan.
 
 📄 [View Full Findings Report](findings/scan-findings.md)
+
+### Step 6 — Investigate and Interpret
+
+#### Task 1 — Operating System Detection
+
+##### Part 1 — OS Detection Scan
+Used `-O` flag to identify the operating system running on the target host.
+
+**Command used:**
+
+nmap -O [target-ip] -oN task1_os_detection.txt
+
+**Results:**
+- Device type: General purpose
+- OS detected: Microsoft Windows 11 24H2 - 25H2
+- Network Distance: 0 hops
+- OS CPE: cpe:/o:microsoft:windows_11
+
+![OS Detection Scan](06-os-detection-scan.png)
+
+##### Part 2 — Service Confirmation Scan
+Ran a follow-up service scan to verify consistency between
+detected OS and running services.
+
+**Command used:**
+
+nmap -sV [target-ip] -oN task1_service_confirm.txt
+
+**Results:**
+- Services confirmed consistent with Windows OS
+- Splunk SIEM confirmed on ports 8000 and 8089
+- Intel AMT confirmed on port 16992
+- No discrepancies detected
+
+![Service Confirmation Scan](07-service-confirmation-scan.png)
