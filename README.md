@@ -49,9 +49,35 @@ to identify all active hosts without triggering port scans.
 
 **Command used:**
 
+nmap -sn  [target-ip]
+
 **Results:**
 - Scanned 256 IP addresses
 - Discovered 2 active hosts on the network
 - Scan completed in 12.43 seconds
 
 ![Ping Sweep Results](03-ping-sweep-host-discovery.png)
+
+### Step 4 — Port Scan (Service Discovery)
+Performed a default port scan on the active host to identify
+open ports and running services.
+
+**Command used:**
+
+nmap [target-ip]
+
+**Results — 9 open ports discovered:**
+
+| Port | Service | Notes |
+|------|---------|-------|
+| 135/tcp | msrpc | Windows RPC |
+| 139/tcp | netbios-ssn | Windows NetBIOS file sharing |
+| 445/tcp | microsoft-ds | SMB file sharing |
+| 5357/tcp | wsdapi | Windows device discovery |
+| 6666/tcp | irc | Unusual — warrants investigation |
+| 8000/tcp | http-alt | HTTP service |
+| 8080/tcp | http-proxy | HTTP proxy service |
+| 8089/tcp | unknown | Unidentified service |
+| 16992/tcp | amt-soap-http | Intel AMT remote management |
+
+![Port Scan Results](04-port-scan-host.png)
