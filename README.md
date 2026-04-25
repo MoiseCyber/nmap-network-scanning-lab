@@ -242,3 +242,18 @@ nmap --script vuln [target-ip] -oN task5_vuln_scan.txt
 ![Vulnerability Scan](11-vulnerability-scan.png)
 
 📄 [View Raw Scan Output](task5_vuln_scan.txt)
+
+## 📝 Summary
+
+By completing this project I was able to:
+
+- Perform key Nmap scan types including host discovery, port scanning,
+service detection, OS detection, and vulnerability scanning
+- Identify active hosts and confirm services running on the target device
+- Validate vulnerability scan results through re-checking and correlation
+- Distinguish real findings from false positives
+- Document scan outputs clearly and concisely for reporting purposes
+
+## ⚠️ Legal Disclaimer
+All scans were performed on a personal local network in a controlled
+lab environment. No unauthorized systems were scanned.
