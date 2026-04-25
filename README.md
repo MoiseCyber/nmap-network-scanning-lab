@@ -23,3 +23,10 @@ active hosts, open ports, and running services on a local network.
 ## ⚠️ Legal Disclaimer
 All scans were performed on a personal local network in a controlled lab environment. 
 No unauthorized systems were scanned.
+## 🖥️ Lab Walkthrough
+
+### Step 1 — Nmap Installation Verification
+Confirmed successful installation of Nmap 7.99 on Windows.
+The version output validates the environment is ready for network scanning operations.
+
+![Nmap Version](nmap%20version.png)
