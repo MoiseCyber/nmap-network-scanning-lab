@@ -217,3 +217,24 @@ nmap -sU [target-ip] -oN task3_udp_scan.txt
 ![UDP Scan](09-udp-scan.png)
 
 📄 [View Raw Scan Output](task3_udp_scan.txt)
+
+#### Task 4 — Port State Reasons
+
+Used `--reason` flag to identify why Nmap classified each port
+as open, closed, or filtered.
+
+**Command used:**
+
+nmap --reason -p- [target-ip] -oN task4_reasons.txt
+
+**Key observations:**
+- Scanned all 65535 ports
+- 18 open ports detected — more than previous scans
+- All open ports show `syn-ack ttl 128` confirming Windows OS
+- Port 137 filtered — firewall blocking NetBIOS name service
+- High ports 49664+ open — normal Windows dynamic ports
+- Scan completed in 5.26 seconds
+
+![Port State Reasons](10-port-state-reasons-scan.png)
+
+📄 [View Raw Scan Output](task4_reasons.txt)
