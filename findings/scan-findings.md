@@ -62,3 +62,35 @@ SYN scan completed in 0.88 seconds, significantly faster than version scans.
 **Findings:** TTL 128 confirms Windows OS on target host. All open ports
 responded with syn-ack, meaning no firewall interference on LAN.
 Port 137 is the only filtered port, blocked by the host firewall.
+
+## Task 5 — Vulnerability Scan Findings
+
+### Finding #1 — Slowloris DoS Vulnerability (Port 8000/tcp — HTTP)
+
+| Field | Details |
+|-------|---------|
+| Port & Service | 8000/tcp — HTTP (Splunkd) |
+| Script Name / CVE | http-slowloris-check — CVE-2007-6750 |
+| Description | Slowloris attempts to exhaust web server resources by keeping many HTTP connections open using partial requests, causing Denial of Service. |
+| State / Confidence | LIKELY VULNERABLE |
+| Notes | Affects the Splunk web interface running on port 8000. |
+
+### Finding #2 — Slowloris DoS Vulnerability (Port 8089/tcp — HTTPS)
+
+| Field | Details |
+|-------|---------|
+| Port & Service | 8089/tcp — HTTPS (Splunkd) |
+| Script Name / CVE | http-slowloris-check — CVE-2007-6750 |
+| Description | Same vulnerability as port 8000 but affects the encrypted Splunk interface. |
+| State / Confidence | LIKELY VULNERABLE |
+| Notes | Both HTTP and HTTPS Splunk interfaces share the same backend, making both susceptible. |
+
+### Recommended Remediation
+
+| Recommendation | Why |
+|---------------|-----|
+| Implement rate limiting for HTTP and HTTPS | Prevents excessive partial connection attempts |
+| Keep Splunk updated to latest version | Updates address known vulnerabilities |
+| Restrict access to ports 8000 and 8089 | Only allow trusted IPs |
+| Enable connection timeout settings | Reduces success rate of Slowloris attacks |
+| Use firewall rules to limit portal access | Removes external attack surface |
