@@ -29,7 +29,7 @@ Splunk SIEM and Intel AMT remote management technology.
 - **UPnP (5357)** — Can expose network to unauthorized device discovery
 - **Splunk (8000/8089)** — Ensure access is restricted to authorized users only
 
--## Task 2 — TCP SYN Scan Findings
+- ## Task 2 — TCP SYN Scan Findings
 
 | Port | State | Service | Comments |
 |------|-------|---------|----------|
