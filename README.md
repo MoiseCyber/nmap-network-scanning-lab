@@ -81,3 +81,33 @@ nmap [target-ip]
 | 16992/tcp | amt-soap-http | Intel AMT remote management |
 
 ![Port Scan Results](04-port-scan-host.png)
+
+### Step 4 — Service Version Detection
+Ran a deeper scan using `-sV` to identify specific service 
+versions running on each open port.
+
+**Command used:**
+
+nmap -sV [target-ip]
+
+**Results — Services identified:**
+
+| Port | Service | Version |
+|------|---------|---------|
+| 135/tcp | msrpc | Microsoft Windows RPC |
+| 139/tcp | netbios-ssn | Microsoft Windows NetBIOS |
+| 445/tcp | microsoft-ds | SMB |
+| 5357/tcp | http | Microsoft HTTPAPI 2.0 (SSDP/UPnP) |
+| 6666/tcp | irc | Unconfirmed |
+| 8000/tcp | http | Splunkd httpd |
+| 8080/tcp | http-proxy | Unconfirmed |
+| 8089/tcp | ssl/http | Splunkd httpd |
+| 16992/tcp | http | Intel AMT v14.1.77.2497 |
+
+**Key findings:**
+- OS confirmed as Windows
+- Splunk SIEM running on ports 8000 and 8089
+- Intel Active Management Technology detected
+- UPnP enabled on port 5357
+
+![Service Version Detection](05-service-version-detection.png)
