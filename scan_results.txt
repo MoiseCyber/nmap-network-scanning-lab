@@ -1,0 +1,16 @@
+# Nmap 7.99 scan initiated Sat Apr 25 02:14:24 2026 as: nmap -sV -oN scan_results.txt [target-ip]
+Nmap scan report for [target-ip]
+Host is up (0.00032s latency).
+Not shown: 993 closed tcp ports (reset)
+PORT      STATE SERVICE       VERSION
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds?
+5357/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+8000/tcp  open  http          Splunkd httpd
+8089/tcp  open  ssl/http      Splunkd httpd
+16992/tcp open  http          Intel Active Management Technology User Notification Service httpd 14.1.77.2497
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows, cpe:/h:intel:active_management_technology:14.1.77.2497
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Apr 25 02:14:47 2026 -- 1 IP address (1 host up) scanned in 23.41 seconds
