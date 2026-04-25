@@ -30,3 +30,15 @@ Confirmed successful installation of Nmap 7.99 on Windows.
 The version output validates the environment is ready for network scanning operations.
 
 ![Nmap Version](nmap%20version.png)
+
+### Step 2 — Network Interface Discovery (ipconfig)
+Used the `ipconfig` command to identify the active network interfaces
+and determine the local IP range to be used for scanning.
+
+**Key findings:**
+- Multiple network adapters detected
+- Active Wi-Fi adapter identified with a /24 subnet
+- Network range determined for use in Nmap scanning
+
+![ipconfig output part 1](02-ipconfig-network-discovery-part1.png)
+![ipconfig output part 2](02-ipconfig-network-discovery-part2.png)
