@@ -125,3 +125,9 @@ In real security assessments, saving scan output is essential
 for documentation, audit trails, and reporting to stakeholders.
 
 📄 [View Full Scan Results](scan_results.txt)
+
+## 📊 Findings Report
+A detailed findings report documenting all discovered hosts,
+open ports, services, and risk observations from the scan.
+
+📄 [View Full Findings Report](findings/scan-findings.md)
