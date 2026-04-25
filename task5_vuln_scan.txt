@@ -1,0 +1,35 @@
+# Nmap 7.99 scan initiated Sat Apr 25 05:56:04 2026 as: nmap --script vuln -oN task5_vuln_scan.txt [target-ip]
+Nmap scan report for [target-ip]
+Host is up (0.000088s latency).
+Not shown: 993 closed tcp ports (reset)
+PORT      STATE SERVICE
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+445/tcp   open  microsoft-ds
+5357/tcp  open  wsdapi
+8000/tcp  open  http-alt
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+| http-enum: 
+|_  /robots.txt: Robots file
+8089/tcp  open  unknown
+16992/tcp open  amt-soap-http
+
+Host script results:
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_smb-vuln-ms10-054: false
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+
+# Nmap done at Sat Apr 25 06:01:26 2026 -- 1 IP address (1 host up) scanned in 322.02 seconds
