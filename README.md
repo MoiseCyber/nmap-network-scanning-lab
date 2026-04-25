@@ -42,3 +42,16 @@ and determine the local IP range to be used for scanning.
 
 ![ipconfig output part 1](02-ipconfig-network-discovery-part1.png)
 ![ipconfig output part 2](02-ipconfig-network-discovery-part2.png)
+
+### Step 3 — Ping Sweep (Host Discovery)
+Used `nmap -sn` to perform a ping sweep across the entire /24 subnet
+to identify all active hosts without triggering port scans.
+
+**Command used:**
+
+**Results:**
+- Scanned 256 IP addresses
+- Discovered 2 active hosts on the network
+- Scan completed in 12.43 seconds
+
+![Ping Sweep Results](03-ping-sweep-host-discovery.png)
